@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Membership Plans — IronRow Gym{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Membership</p>
+    <h1>Pick a plan. Start today.</h1>
+    <p class="hero-sub">No hidden fees, no long-term contracts on the monthly plan. Cancel any time from your account.</p>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container pricing-grid">
+    {% for plan in plans %}
+    <article class="price-card {{ 'price-card-highlight' if plan.highlight }}">
+      {% if plan.highlight %}<p class="price-badge">Most Popular</p>{% endif %}
+      <h3>{{ plan.name }}</h3>
+      <p class="price"><span>{{ plan.price }}</span> {{ plan.period }}</p>
+      <ul class="price-features">
+        {% for feature in plan.features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+      </ul>
+      <a href="{{ url_for('contact') }}" class="btn {{ 'btn-primary' if plan.highlight else 'btn-ghost' }}">Choose {{ plan.name }}</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title">Common questions</h2>
+    <details class="faq-item">
+      <summary>Can I freeze my membership?</summary>
+      <p>Yes, monthly and annual members can freeze for up to 60 days per year at no charge.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is there an initiation fee?</summary>
+      <p>No. The price you see is the price you pay, starting your first billing cycle.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do classes cost extra?</summary>
+      <p>All coached classes are included in Monthly and Annual plans. Drop-in members pay a small per-class fee.</p>
+    </details>
+  </div>
+</section>
+{% endblock %}

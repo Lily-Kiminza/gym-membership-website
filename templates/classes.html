@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Class Schedule — IronRow Gym{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Schedule</p>
+    <h1>This week's classes</h1>
+    <p class="hero-sub">Every class is coached live. Arrive 10 minutes early to grab your equipment.</p>
+  </div>
+</section>
+
+<section class="schedule">
+  <div class="container">
+    <div class="schedule-table">
+      <div class="schedule-row schedule-head">
+        <span>Day</span><span>Time</span><span>Class</span><span>Coach</span>
+      </div>
+      {% for c in classes %}
+      <div class="schedule-row">
+        <span data-label="Day">{{ c.day }}</span>
+        <span data-label="Time">{{ c.time }}</span>
+        <span data-label="Class">{{ c.name }}</span>
+        <span data-label="Coach">{{ c.coach }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

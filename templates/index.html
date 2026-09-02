@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}IronRow Gym — Train With Intent{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">Foundry District &middot; Open 7 Days</p>
+    <h1>Every rep counted.<br>Every plate earned.</h1>
+    <p class="hero-sub">
+      IronRow is a strength-first gym for people who track their progress the same
+      way they track their bank balance &mdash; closely. Barbells, coaching, and a
+      community that notices when you show up.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ url_for('membership') }}" class="btn btn-primary">See Membership Plans</a>
+      <a href="{{ url_for('classes') }}" class="btn btn-ghost">View Class Schedule</a>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE ELEMENT: a "plate loader" bar. Each stat is visualized as a
+     barbell being loaded with plates, echoing how members literally track
+     weight loaded on a bar. This ties the visual language directly to the
+     gym's actual equipment instead of a generic icon+number card. -->
+<section class="plate-loader-section">
+  <div class="container">
+    <div class="plate-loader-grid">
+
+      <div class="plate-loader">
+        <div class="plate-loader-bar">
+          <span class="sleeve"></span>
+          <span class="plate plate-lg"></span>
+          <span class="plate plate-lg"></span>
+          <span class="plate plate-md"></span>
+        </div>
+        <p class="plate-stat">500+</p>
+        <p class="plate-label">Active Members</p>
+      </div>
+
+      <div class="plate-loader">
+        <div class="plate-loader-bar">
+          <span class="sleeve"></span>
+          <span class="plate plate-lg"></span>
+          <span class="plate plate-sm"></span>
+        </div>
+        <p class="plate-stat">12</p>
+        <p class="plate-label">Coached Classes / Week</p>
+      </div>
+
+      <div class="plate-loader">
+        <div class="plate-loader-bar">
+          <span class="sleeve"></span>
+          <span class="plate plate-md"></span>
+          <span class="plate plate-md"></span>
+          <span class="plate plate-md"></span>
+          <span class="plate plate-sm"></span>
+        </div>
+        <p class="plate-stat">9 yrs</p>
+        <p class="plate-label">In the Foundry District</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">Why members stay</h2>
+    <div class="features-grid">
+      <article class="feature-card">
+        <h3>Coached, not just supervised</h3>
+        <p>Every class is programmed and led by a coach who tracks your numbers week over week &mdash; not a playlist and a mirror.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Equipment that gets used, not queued</h3>
+        <p>We cap membership numbers on purpose. You'll rarely wait for a rack, a rig, or a rower.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Programming with a plan</h3>
+        <p>Strength blocks build on each other. You're always working toward a number, not just a sweat.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <h2>Your first session is on us.</h2>
+    <p>Walk in, meet a coach, load a bar. No pressure, no pitch.</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-primary">Book a Free Session</a>
+  </div>
+</section>
+
+{% endblock %}

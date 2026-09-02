@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Contact — IronRow Gym{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Get in touch</p>
+    <h1>Book a free session</h1>
+    <p class="hero-sub">Tell us a little about your goals and a coach will follow up within one business day.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container contact-grid">
+    <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="message">What are you working toward?</label>
+      <textarea id="message" name="message" rows="5" placeholder="e.g. I want to build strength and join a class I'll actually stick with." required></textarea>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Foundry District</h3>
+      <p class="muted">142 Foundry Street<br>Open 5:00 AM &ndash; 11:00 PM, every day</p>
+      <h3>Reach a coach directly</h3>
+      <p class="muted">(555) 019-2244<br>coach@ironrowgym.example</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

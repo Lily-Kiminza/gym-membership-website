@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Flask
+instance/
+.flaskenv
+
+# OS / editor files
+.DS_Store
+.vscode/
